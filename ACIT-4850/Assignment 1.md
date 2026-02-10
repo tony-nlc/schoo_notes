@@ -10,4 +10,8 @@
 7. Must support deployment to **Kubernetes**
 8. Must support integration to **Jira**
 ### Non-functional Requirements
-1. The tool must be a **hosted service**, no local hardware/software managements
+1. **SaaS**: The tool must be a **hosted service**, no local hardware/software managements
+2. **Authentication**: The tool must integrate with internal **LDAP** for **SSO**
+3. **Security**: The tool must support **MFA** for admin access
+4. **Auditability**: The tool must provide audit logging to **usage tracking** and **user tracking**
+5. **Cost**: The total going cost must not exceed **$300 USD**
