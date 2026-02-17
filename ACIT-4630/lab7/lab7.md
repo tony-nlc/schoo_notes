@@ -32,3 +32,16 @@ Q.8
 
 
 ![[Pasted image 20260216165107.png]]
+
+Q9. What’s the purpose of the `-m 100` option?
+
+The `-m` flag stands for Hash Type. In Hashcat, every hashing algorithm is assigned a specific numeric code so the software knows how to process the data.
+
+- `-m 100` specifically tells Hashcat that the input hashes are SHA1.
+
+Q10. 
+It is still a dictionary attack.
+
+Q11.
+![[Pasted image 20260216165723.png]]
+
