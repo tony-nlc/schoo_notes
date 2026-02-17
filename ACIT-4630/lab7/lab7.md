@@ -54,6 +54,6 @@ automatically try common variations like:
 - **Duplication:** `passwordpassword`
 - **Common symbols:** `password!`
 
-Q13. ![[Pasted image 20260216171836.png]]
+Q13. ![[Pasted image 20260216173951.png]]
 
 Q14.
