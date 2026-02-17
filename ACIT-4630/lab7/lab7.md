@@ -10,8 +10,10 @@ Q3. MFA could be a solution here because it requires an authentication from a se
 $oldoffice$1*b405d2e0bef836cd538b96de63d64cfd*7c33fab607ed148ae5f2ca3ee8ca4c0b*e0e9f79eabc501653af0543e027f0cad
 ```
 
-
+Q4. 
 ![[Pasted image 20260216161021.png]]
 
-	
+Q5. 
+This is a dictionary attack because we have a predefined list.
+
 
