@@ -42,8 +42,7 @@ The `-m` flag stands for Hash Type. In Hashcat, every hashing algorithm is assig
 Q10. 
 It is still a dictionary attack.
 
-Q11.
-![[Pasted image 20260216165723.png]]
+Q11.![[Pasted image 20260216174302.png]]
 
 Q12. 
 It applies different variation of password
