@@ -62,3 +62,6 @@ The `-a` flag stands for Attack Mode.
 
 Q15.
 ![[Pasted image 20260216233129.png]]
+
+Q16.
+![[Pasted image 20260216233415.png]]
