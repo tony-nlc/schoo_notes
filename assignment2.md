@@ -21,4 +21,6 @@ Even if the prefix is exactly 64 bytes, the tool may still append a full **64-by
 ![[Pasted image 20260218182009.png]]
 
 ### Task 4
+![[Pasted image 20260218183214.png]]
+
 
