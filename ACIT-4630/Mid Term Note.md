@@ -1,123 +1,151 @@
-# Cybersecurity Fundamentals: Detailed Study Guide
-
 ## 1. Attack & Threat Frameworks
 
-- **STRIDE (Threat Modeling):**
+### CIA Triad (The Goals)
+
+When an attack happens, identify what was lost:
+
+- **Confidentiality:** Data was seen by someone who shouldn't have. (_Ex: A data breach/sniffing_).
     
-    - **Spoofing:** Pretending to be someone else (violates **Authentication**).
-        
-    - **Tampering:** Maliciously modifying data (violates **Integrity**).
-        
-    - **Repudiation:** Denying an action took place because there’s no log (violates **Non-repudiation**).
-        
-    - **Information Disclosure:** Leaking private data (violates **Confidentiality**).
-        
-    - **Denial of Service:** Crashing a system (violates **Availability**).
-        
-    - **Elevation of Privilege:** A standard user gaining Admin rights (violates **Authorization**).
-        
-- **CIA Triad (The Core Goals):**
+- **Integrity:** Data was changed or modified. (_Ex: An attacker changes a bank balance_).
     
-    - **Confidentiality:** Keeping data secret (Attack: Snooping/Sniffing).
-        
-    - **Integrity:** Keeping data accurate/unaltered (Attack: Man-in-the-Middle).
-        
-    - **Availability:** Keeping systems up and running (Attack: DoS/DDoS).
-        
-- **Zero-Day Vulnerability:** A security hole that is exploited **before** the developer knows it exists. There are "zero days" of protection available.
+- **Availability:** The system is down or slow. (_Ex: A DDoS attack_).
     
+
+### STRIDE (The Threats)
+
+|Threat|Violation|Example|
+|---|---|---|
+|**S**poofing|**Authentication**|Faking an identity (IP spoofing, email spoofing).|
+|**T**ampering|**Integrity**|Modifying a file or a packet in transit.|
+|**R**epudiation|**Non-repudiation**|Denying you sent a message because there are no logs.|
+|**I**nformation Disclosure|**Confidentiality**|Leaking private database records.|
+|**D**enial of Service|**Availability**|Crashing a website so legitimate users can't enter.|
+|**E**levation of Privilege|**Authorization**|A standard user gaining Admin/Root access.|
+
+Export to Sheets
+
+---
 
 ## 2. Hacker Profiles & Skills
 
-- **Hacker Types:**
+- **White Hat:** Ethical/Legal (Pentesters).
     
-    - **White Hat:** Hired professionals (Pentesters) using skills for good.
-        
-    - **Black Hat:** Criminals motivated by money, ego, or malice.
-        
-    - **Gray Hat:** Hacks without permission (illegal) but doesn't necessarily cause harm (e.g., notifying a company of a bug).
-        
-    - **Hacktivist:** Hacks for a cause (e.g., Anonymous).
-        
-    - **Script Kiddie:** Uses "point-and-click" tools; doesn't understand the underlying code.
-        
-    - **State-Sponsored:** Highly funded, persistent, and targets national infrastructure.
-        
-- **Skill Sets:**
+- **Black Hat:** Malicious/Illegal (Criminals).
     
-    - **Red Team:** Offensive security; simulates the "bad guy."
-        
-    - **Blue Team:** Defensive security; focuses on detection and incident response.
-        
-
-## 3. Vulnerabilities & Standards (The "Phonebook" of Security)
-
-- **CVE (Exposures):** A specific ID for a specific bug (e.g., CVE-2021-44228 for Log4j).
+- **Gray Hat:** Hacks without permission but usually without "malice" (e.g., to find a bug).
     
-- **CWE (Weaknesses):** The _type_ of mistake (e.g., "Buffer Overflow" or "Hardcoded Password").
+- **Hacktivist:** Hacks for a political or social cause (e.g., Anonymous).
     
-- **CVSS (Scoring):** A scale of **0.0 to 10.0**. (7.0+ is usually High; 9.0+ is Critical).
+- **Script Kiddie:** Uses pre-made tools; doesn't understand the code.
     
-- **Sources:** 1. **Software Bugs:** Flaws in code (e.g., SQL Injection). 2. **Misconfigurations:** Leaving default passwords (admin/admin) or open ports.
+- **State-Sponsored:** Highly funded by a government (APT - Advanced Persistent Threat).
     
 
-## 4. Malicious Activity & Social Engineering
+**The Labels:**
 
-- **Malware Types:**
+- **Red Team:** Offensive (The Attackers).
     
-    - **Worm:** Unlike a virus, it spreads **automatically** across a network without human help.
-        
-    - **Trojan:** Appears useful (like a free game) but hides a malicious payload.
-        
-    - **Ransomware:** Encrypts your data and demands cryptocurrency to unlock it.
-        
-    - **Rootkit:** Hides deep in the OS (Kernel level) so antivirus can't see it.
-        
-- **Botnets:**
-    
-    - **Command & Control (C&C):** The central server the "Botmaster" uses to send orders.
-        
-    - **Zombies:** The thousands of infected home computers/IoT devices waiting for orders.
-        
-- **Social Engineering Factors:**
-    
-    - **Authority:** "I'm calling from the CEO's office."
-        
-    - **Urgency:** "Your account will be deleted in 10 minutes!"
-        
-    - **Scarcity:** "Only 2 password reset slots left."
-        
-    - **Trust/Liking:** Building a rapport before asking for a favor.
-        
-
-## 5. Cryptography
-
-- **Hashing:** Transforming data into a fixed-length string. **It is one-way.** (If you change one letter in a file, the "Check-sum" hash changes completely).
-    
-- **Digital Signatures:** The sender encrypts a hash with their **Private Key**. The receiver decrypts it with the sender's **Public Key**. This proves the message hasn't been changed (**Integrity**) and it really came from the sender (**Non-repudiation**).
+- **Blue Team:** Defensive (The Defenders/Detection).
     
 
-## 6. PKI & Certificates
+---
 
-- **PKI:** The "Trust Factory." It includes the **CA (Certificate Authority)** which acts like a digital notary.
-    
-- **Verification Process:** Your browser checks the **Signature** on the certificate using the CA's public key (which is built into your OS/Browser).
-    
-- **Self-Signed:** Great for testing (like your lab), but triggers "Your connection is not private" errors because no trusted third party (CA) can vouch for you.
-    
-- **Revocation:** * **CRL:** A big list of "bad" certificates (Slow).
-    
-    - **OCSP:** A real-time "Is this cert still good?" check (Fast).
-        
+## 3. Vulnerabilities & Acronyms
 
-## 7. Operations & Backups
+- **Zero-Day:** A vulnerability exploited **before** a patch is available.
+    
+- **CVE (Common Vulnerabilities & Exposures):** A list of publicly disclosed cybersecurity bugs (The ID number).
+    
+- **CWE (Common Weakness Enumeration):** The **category** of the flaw (e.g., "Buffer Overflow").
+    
+- **CVSS (Common Vulnerability Scoring System):** The **score** (0-10) of how dangerous it is.
+    
+- **Sources of Vulnerabilities:** 1. **Software Bugs** (bad code) 2. **Misconfigurations** (weak passwords/open ports).
+    
 
-- **The 3-Circle Diagram:** The constant struggle between **Security** (locks), **Functionality** (features), and **Ease of Use** (convenience). If you increase one, you often decrease the others.
+---
+
+## 4. Malware & Botnets
+
+- **Worm:** Spreads **automatically** across a network (no human help).
     
-- **Backup Speed Comparison:**
+- **Trojan:** Disguised as something useful (e.g., a "free" game).
     
-    - **Full:** Everything. (Fastest Restore—you only need one file).
-        
-    - **Incremental:** Only what changed since _any_ previous backup. (Fastest Backup—very small files).
-        
-    - **Differential:** Only what changed since the last _Full_ backup. (The middle ground).
+- **Ransomware:** Encrypts your data for money.
+    
+- **Rootkit:** Hides at the **Kernel level** (deep OS) to avoid detection.
+    
+
+**Botnets:**
+
+- **Components:** **Botmaster** (Attacker), **Command & Control (C&C)** server, and **Zombies/Bots** (Infected devices).
+    
+- **How they work:** The Botmaster sends a command to the C&C, which pushes the order to thousands of Zombies to launch a DDoS attack.
+    
+
+---
+
+## 5. Social Engineering Factors
+
+- **Authority:** "I'm the IT Director, give me your password."
+    
+- **Urgency:** "Your account will be deleted in 5 minutes!"
+    
+- **Scarcity:** "Only 3 reset links left today."
+    
+- **Trust/Liking:** Building a friendly rapport before asking for a favor.
+    
+
+---
+
+## 6. Backups & Operations
+
+**The 3-Circle Diagram:** The struggle between **Security**, **Functionality**, and **Ease of Use**. If you increase one, the others typically suffer.
+
+**Backup Strategies:**
+
+- **Full:** Everything. **Fastest Restore** (only 1 file needed). **Slowest Backup**.
+    
+- **Incremental:** Changes since _any_ last backup. **Fastest Backup**. **Slowest Restore** (Needs Full + every increment).
+    
+- **Differential:** Changes since the last _Full_. Medium speed for both.
+    
+
+---
+
+## 7. Cryptography & PKI
+
+### Comparison Table
+
+|Feature|Symmetric|Asymmetric|
+|---|---|---|
+|**Keys**|**1 Key** (Shared Secret)|**2 Keys** (Public & Private)|
+|**Speed**|**Very Fast**|**Slow**|
+|**Use Case**|Bulk data / Hard drives|Key Exchange / Digital Signatures|
+|**Algos**|**AES**, DES, 3DES|**RSA**, ECC, Diffie-Hellman|
+
+Export to Sheets
+
+### Digital Signatures (The Opposite Logic)
+
+- **Encryption:** I use **YOUR Public Key** (Only you can open it).
+    
+- **Signature:** I use **MY Private Key** (Everyone uses my Public Key to verify it's really me).
+    
+
+**Hashing:** One-way math. Used for Integrity.
+
+- **Algorithms:** **SHA-256**, MD5 (weak), SHA-1 (weak).
+    
+
+### PKI & Certificates
+
+- **PKI (Public Key Infrastructure):** The framework that manages trust.
+    
+- **Server Certificate Attributes (Lab 6):** Common Name (the domain), Organization, Country, and the **Public Key**.
+    
+- **Verification:** Your browser uses the **CA's Public Key** to decrypt the signature on the **Server Certificate**.
+    
+- **Revocation:** **CRL** (a list) or **OCSP** (a real-time status check).
+    
+- **Self-Signed:** Recognized if the **Issuer** and the **Subject** are the same name.
